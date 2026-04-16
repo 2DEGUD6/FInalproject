@@ -30,24 +30,25 @@ class OfficeAdapter(private val officeList: List<Office>) :
         holder.price.text = office.price
         holder.image.setImageResource(office.imageRes)
 
-        // Додаємо клік на всю картку
+        // Клік на картку офісу відкриває детальну інформацію
         holder.itemView.setOnClickListener {
             showDialog(holder.itemView.context, office)
         }
     }
 
+    override fun getItemCount(): Int = officeList.size
+
     private fun showDialog(context: android.content.Context, office: Office) {
         val dialog = BottomSheetDialog(context)
         val view = LayoutInflater.from(context).inflate(R.layout.dialog_office_details, null)
 
+        // Заповнюємо дані у спливаючому вікні
         view.findViewById<TextView>(R.id.detailName).text = office.name
         view.findViewById<TextView>(R.id.detailType).text = office.type
         view.findViewById<TextView>(R.id.detailDesc).text = office.description
-        view.findViewById<TextView>(R.id.detailPrice).text = "Ціна: ${office.price}"
+        view.findViewById<TextView>(R.id.detailPrice).text = "Вартість: ${office.price}"
 
         dialog.setContentView(view)
         dialog.show()
     }
-
-    override fun getItemCount(): Int = officeList.size
 }

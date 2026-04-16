@@ -1,5 +1,6 @@
 package com.example.officehub
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -12,10 +13,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Отримуємо дані, які прилетіли з RegisterActivity
-        val savedEmail = intent.getStringExtra("SAVED_EMAIL")
-        val savedPass = intent.getStringExtra("SAVED_PASS")
-        val savedName = intent.getStringExtra("SAVED_NAME")
+        // Дістаємо збережені дані з пам'яті телефону
+        val prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        val savedEmail = prefs.getString("USER_EMAIL", null)
+        val savedPass = prefs.getString("USER_PASS", null) // Переконайся, що в RegisterActivity ти також зберігаєш USER_PASS
+        val savedName = prefs.getString("USER_NAME", "Користувач")
 
         val emailField = findViewById<EditText>(R.id.loginEmail)
         val passField = findViewById<EditText>(R.id.loginPass)
@@ -25,13 +27,13 @@ class LoginActivity : AppCompatActivity() {
             val inputEmail = emailField.text.toString()
             val inputPass = passField.text.toString()
 
-            // Перевірка: чи збігається введений текст із тим, що прийшло з реєстрації
+            // Перевірка: чи збігається введений текст із тим, що в пам'яті
+            // Якщо savedEmail == null, значить реєстрації ще не було
             if (inputEmail == savedEmail && inputPass == savedPass) {
                 Toast.makeText(this, "Ласкаво просимо, $savedName!", Toast.LENGTH_SHORT).show()
 
-                // Переходимо на головний екран (MainActivity)
+                // Переходимо на головний екран
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("USER_NAME", savedName) // передаємо ім'я для профілю
                 startActivity(intent)
                 finish()
             } else {
