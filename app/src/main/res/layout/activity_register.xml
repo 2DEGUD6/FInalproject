@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OfficeHub"
+            android:textColor="#1A1A1A"
+            android:textSize="32sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Створення корпоративного акаунту"
+            android:textColor="#757575"
+            android:textSize="14sp"
+            android:layout_marginBottom="40dp"/>
+
+        <EditText
+            android:id="@+id/regName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Повне ім'я"
+            android:textColorHint="#BDBDBD"
+            android:textColor="#1A1A1A"
+            android:paddingLeft="15dp"
+            android:elevation="2dp"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/regPhone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Телефон"
+            android:inputType="phone"
+            android:textColorHint="#BDBDBD"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/regEmail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Email"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/regPass"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/regPassConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Підтвердження пароля"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Зареєструватися"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:backgroundTint="#1A1A1A"
+            android:stateListAnimator="@null"/>
+
+    </LinearLayout>
+</ScrollView>
