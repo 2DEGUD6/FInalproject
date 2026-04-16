@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class OfficeAdapter(private val officeList: List<Office>) :
     RecyclerView.Adapter<OfficeAdapter.OfficeViewHolder>() {
-
+    // Холдер для елементів списку
     class OfficeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.tvOfficeName)
         val type: TextView = view.findViewById(R.id.tvOfficeType)
@@ -38,11 +38,12 @@ class OfficeAdapter(private val officeList: List<Office>) :
 
     override fun getItemCount(): Int = officeList.size
 
+    // Функція для показу вікна з деталями
     private fun showDialog(context: android.content.Context, office: Office) {
         val dialog = BottomSheetDialog(context)
         val view = LayoutInflater.from(context).inflate(R.layout.dialog_office_details, null)
 
-        // Заповнюємо дані у спливаючому вікні
+        // Наповнюємо текстом наші TextView у спливаючому вікні
         view.findViewById<TextView>(R.id.detailName).text = office.name
         view.findViewById<TextView>(R.id.detailType).text = office.type
         view.findViewById<TextView>(R.id.detailDesc).text = office.description

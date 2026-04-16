@@ -3,62 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@drawable/edit_text_bg">
-
-    <View
-        android:layout_width="40dp"
-        android:layout_height="4dp"
-        android:layout_gravity="center"
-        android:background="#D1D1D1"
-        android:layout_marginBottom="20dp"/>
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/detailName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#1A1A1A"
+        android:textColor="@android:color/black"
         android:text="Назва офісу" />
 
     <TextView
         android:id="@+id/detailType"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#757575"
-        android:text="Категорія"
-        android:layout_marginBottom="15dp"/>
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="4dp"
+        android:text="Тип" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/detailPrice"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Опис об'єкта:"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="#1A1A1A"/>
+        android:textColor="#2E7D32"
+        android:layout_marginTop="12dp"
+        android:text="Ціна" />
 
     <TextView
         android:id="@+id/detailDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#424242"
-        android:text="Тут буде детальний опис офісу та його розташування."
-        android:layout_marginBottom="20dp"/>
-
-    <TextView
-        android:id="@+id/detailPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#FF6D00"
-        android:text="Ціна: 0$" />
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:text="Опис офісу буде тут..." />
 
     <Button
+        android:id="@+id/btnBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Зв'язатися з агентом"
-        android:backgroundTint="#1A1A1A"
-        android:textColor="#FFFFFF"/>
+        android:text="Забронювати"
+        android:backgroundTint="#FF9800"
+        android:textColor="@android:color/white" />
+
 </LinearLayout>
